@@ -14,7 +14,7 @@ public class CarList1 implements CarDataStructure {
 
     @Override
     public CarIterator createIterator() {
-        return new CarList1Ierator();
+        return new CarList1Iterator();
     }
 
     @Override
@@ -23,7 +23,7 @@ public class CarList1 implements CarDataStructure {
     }
 
 
-    private class CarList1Ierator implements CarIterator {
+    private class CarList1Iterator implements CarIterator {
         private int index = 0;
 
         @Override
