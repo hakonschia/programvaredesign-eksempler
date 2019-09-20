@@ -27,7 +27,7 @@ public class CarList2 implements CarDataStructure {
 
         @Override
         public boolean hasNext() {
-            return CarList2.this.arrayIndex > index;
+            return arrayIndex > index;
         }
 
         @Override

@@ -22,12 +22,12 @@ public class Main {
     /**
      * Prints out all the cars
      *
-     * @param cars
+     * @param cars The data structure with the cars to print out
      */
     private static void printCars(CarDataStructure cars) {
         CarIterator i = cars.createIterator();
 
-        // With the use of an iterator, the implementation of CarDataStructure doesn't matter
+        // With the use of an iterator, the different CarDataStructure implementations doesn't matter
         while(i.hasNext()) {
             Car c = i.next();
 
