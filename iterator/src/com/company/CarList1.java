@@ -22,7 +22,6 @@ public class CarList1 implements CarDataStructure {
         cars.add(c);
     }
 
-
     private class CarList1Iterator implements CarIterator {
         private int index = 0;
 
