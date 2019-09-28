@@ -1,11 +1,11 @@
 package com.company;
 
 public abstract class Vehicle {
-    private VehicleFactory.VehicleType type;
+    private String type;
     private String manufacturer;
 
 
-    public void setType(VehicleFactory.VehicleType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -13,7 +13,7 @@ public abstract class Vehicle {
         this.manufacturer = manufacturer;
     }
 
-    public VehicleFactory.VehicleType getType() {
+    public String getType() {
         return type;
     }
 
