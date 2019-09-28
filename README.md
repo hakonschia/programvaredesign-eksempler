@@ -3,5 +3,6 @@ Dette repositoriet inneholder kode eksempler brukt i mappeinnleveringene i IMT31
 
 
 ## Mappe 2 - Design patterns
-[Iterator (Behavioral)](/iterator)
+[Factory Method (Creational)](/factory-method)
 
+[Iterator (Behavioral)](/iterator)
