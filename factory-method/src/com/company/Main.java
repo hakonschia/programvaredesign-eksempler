@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
 
-
         System.out.println("Write C for new car, B for new boat, M for new motorcycle");
         String input = s.next();
 
