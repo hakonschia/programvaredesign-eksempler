@@ -5,7 +5,14 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        CarDao carDb = new CarDatabase(); // Retrieve a database object
+        CarDao carDb;
+
+        boolean connectionMade = false; // A fake connection to demonstrate how to use two different DBs
+        if(connectionMade) {
+            carDb = new InternetDatabase();
+        } else {
+            carDb = new LocalDatabase();
+        }
 
         // Insert 2 cars in the DB
         carDb.insert(new Car(1, 2020, "Audi", "RS6"));

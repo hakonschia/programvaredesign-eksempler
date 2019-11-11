@@ -3,15 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CarDatabase implements CarDao {
+public class LocalDatabase implements CarDao{
     private static int ID_NOT_FOUND = -1; // For when a car with given ID is not found in the DB
 
     private List<Car> cars = new ArrayList<>();
 
     @Override
     public void insert(Car c) {
-        System.out.println("Inserting car");
-
         int id = c.getId();
         if(this.findPos(id) != ID_NOT_FOUND) { // ID was found, car exists in the DB
             return;
@@ -22,8 +20,6 @@ public class CarDatabase implements CarDao {
 
     @Override
     public void delete(int id) {
-        System.out.println("Deleting car");
-
         int pos = this.findPos(id);
         cars.remove(pos);
     }
@@ -35,8 +31,6 @@ public class CarDatabase implements CarDao {
 
     @Override
     public void update(Car c) {
-        System.out.println("Updating car");
-
         int id = c.getId();
         int pos = this.findPos(id);
 
