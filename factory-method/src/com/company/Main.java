@@ -15,7 +15,7 @@ public class Main {
         Vehicle v = vehicleFactory.createVehicle(input); // The factory is responsible for figuring out what type to create
 
         if(v != null) { // If the input was not valid, null is returned by createVehicle()
-            System.out.printf("A new %s was added (made by %s)%n", v.getType(), v.getManufacturer());
+            System.out.printf("A new %s was added: %s%n", v.getType(), v.toString());
         } else {
             System.out.println("Invalid input");
         }

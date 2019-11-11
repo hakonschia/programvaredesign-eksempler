@@ -11,23 +11,16 @@ public class VehicleFactory {
     public Vehicle createVehicle(String type) {
         type = type.toUpperCase(); // Ensure it's uppercase
 
-        Vehicle v = null; // The vehicle to return
-
         switch(type) {
             case "C":
-                v = new Car();
-                break;
+                return new Car();
             case "B":
-                v = new Boat();
-                break;
+                return new Boat();
             case "M":
-                v = new Motorcycle();
-                break;
+                return new Motorcycle();
             default:
-                break;
+                return null;
         }
-
-        return v;
     }
 
 }

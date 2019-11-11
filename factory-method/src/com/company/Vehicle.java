@@ -1,8 +1,8 @@
 package com.company;
 
 public abstract class Vehicle {
-    private String type;
-    private String manufacturer;
+    protected String type;
+    protected String manufacturer;
 
 
     public void setType(String type) {
