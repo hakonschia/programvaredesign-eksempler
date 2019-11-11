@@ -10,16 +10,9 @@ public class Boat extends Vehicle {
         this.maxSpeed = 50;
     }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
     @Override
     public String toString() {
-        return "Boat{" +
-                "maxSpeed=" + maxSpeed +
-                ", type='" + type + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                '}';
+        return String.format("Boat{maxSpeed=%d, type='%s', manufacturer='%s'}", maxSpeed, type, manufacturer);
     }
 }
+

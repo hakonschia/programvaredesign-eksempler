@@ -10,16 +10,8 @@ public class Motorcycle extends Vehicle {
         this.horsePower = 115;
     }
 
-    public int getHorsePower() {
-        return horsePower;
-    }
-
     @Override
     public String toString() {
-        return "Motorcycle{" +
-                "horsePower=" + horsePower +
-                ", type='" + type + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                '}';
+        return String.format("Motorcycle={horsePower=%d, type='%s', manufacturer='%s'}", horsePower, type, manufacturer);
     }
 }
