@@ -4,15 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDatabase implements CarDao {
-    private static int ID_NOT_FOUND = -1;
+    private static int ID_NOT_FOUND = -1; // For when a car with given ID is not found in the DB
 
-    List<Car> cars = new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();
 
     @Override
-    public void insert(Car c) throws DbException {
+    public void insert(Car c) {
+        System.out.println("Inserting car");
+
         int id = c.getId();
         if(this.findPos(id) != ID_NOT_FOUND) { // ID was found, car exists in the DB
-            throw new DbException("Car with that ID already exists");
+            return;
         }
 
         cars.add(c);
@@ -20,6 +22,8 @@ public class CarDatabase implements CarDao {
 
     @Override
     public void delete(int id) {
+        System.out.println("Deleting car");
+
         int pos = this.findPos(id);
         cars.remove(pos);
     }
@@ -30,7 +34,10 @@ public class CarDatabase implements CarDao {
     }
 
     @Override
-    public void update(Car c, int id) {
+    public void update(Car c) {
+        System.out.println("Updating car");
+
+        int id = c.getId();
         int pos = this.findPos(id);
 
         if(pos != ID_NOT_FOUND) { // Car was found, update its information
@@ -39,13 +46,16 @@ public class CarDatabase implements CarDao {
             old.setModel(c.getModel());
             old.setYear(c.getYear());
         }
+        // In this example the update function doesn't do anything, since
+        // it's all stored in runtime. In a real example this would update the
+        // record with "c"'s ID with the values in "c"
     }
 
     @Override
-    public Car get(int id) throws DbException {
+    public Car get(int id) {
         int pos = this.findPos(id);
         if(pos == ID_NOT_FOUND) {
-            throw new DbException("ID not found");
+            return null;
         }
 
         return cars.get(pos);
